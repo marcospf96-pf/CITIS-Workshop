@@ -1,3 +1,4 @@
+
 # CITIS-Workshop
 
 ##  Configurar el ambiente
@@ -38,6 +39,7 @@ ls
 
 El script realizará validaciones sobre las librerias instaladas, según sean los resultados de la validación se requiere la instalación de paquetes.
 
+<img width="361" height="375" alt="validacion" src="https://github.com/user-attachments/assets/db5b9dd9-5336-4f17-8766-94ff77317d56" />
 
 
 
