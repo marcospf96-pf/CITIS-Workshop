@@ -84,3 +84,28 @@ handshakes. Cualquier punto de acceso que implemente el protocolo WEP ENC será 
 
 <img width="509" height="643" alt="selecttarget" src="https://github.com/user-attachments/assets/9bd112b1-79b1-4d18-bbeb-8b0ce9a25993" />
 
+
+## Ataque de desautenticación
+
+Este ataque envía paquetes de desconexión a uno o más clientes que actualmente están asociados a un punto de acceso específico.
+
+La desconexión de clientes puede realizarse por varios motivos:
+
+• Recuperación de un ESSID oculto. Se trata de un ESSID que no se está difundiendo. También se conoce como:
+“enmascarado”.
+• Captura de protocolos de enlace WPA/WPA2 forzando a los clientes a volver a autenticarse.
+• Generación de solicitudes ARP (los clientes Windows a veces vacían su caché ARP al desconectarse).
+
+
+Ahora se le pedirá que seleccione un tipo de ataque; elija la opción 2 para el ataque de repetición de muerte, que utilizará
+un ataque de desautenticación para desconectar a todos los clientes antes de capturar el protocolo de enlace entre el punto de acceso y el cliente.  Posteriormente, selecciona un tiempo de espera en segundos.
+
+<img width="584" height="384" alt="attack" src="https://github.com/user-attachments/assets/299a6afa-2193-46f0-9b3c-8e2d07501be7" />
+
+
+Verás que aparecen dos ventanas. Tras la desautenticación, una intentará realizar un ataque de desautenticación, mientras que la otra intentará registrar el protocolo de enlace de cuatro vías entre el cliente y el punto de acceso.
+
+<img width="613" height="303" alt="Screenshot 2025-10-29 at 6 00 56 p m" src="https://github.com/user-attachments/assets/74509670-de4d-4388-8c97-29aee0ed0975" />
+
+Espere hasta que aparezca el protocolo de enlace WPA en la esquina superior derecha de la ventana y, a continuación, pulse CTRL^C.
+
