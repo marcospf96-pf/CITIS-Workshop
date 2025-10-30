@@ -109,3 +109,32 @@ Verás que aparecen dos ventanas. Tras la desautenticación, una intentará real
 
 Espere hasta que aparezca el protocolo de enlace WPA en la esquina superior derecha de la ventana y, a continuación, pulse CTRL^C.
 
+<img width="621" height="230" alt="Screenshot 2025-10-29 at 6 01 05 p m" src="https://github.com/user-attachments/assets/1bbd2bb1-6233-4360-8d52-c35118580875" />
+
+
+Como puede ver, este es el protocolo de enlace WPA para el punto de acceso "raaj". Ahora puede guardar este archivo .cap en su sistemas.
+
+<img width="626" height="114" alt="Screenshot 2025-10-29 at 6 03 32 p m" src="https://github.com/user-attachments/assets/933b5f5c-0319-45b9-8c38-e380da0f3b1d" />
+
+
+## Ataque de diccionario Aircrack para el apretón de manos WPA
+
+La contraseña de Wi-Fi se guardaba en un archivo de enlace, pero como estaba cifrada, tuvimos que descifrarla para obtenerla.
+
+Vuelva al menú principal seleccionando la opción 0.
+
+<img width="624" height="269" alt="Screenshot 2025-10-29 at 6 04 50 p m" src="https://github.com/user-attachments/assets/58abd140-5271-4898-83ff-326664708fa7" />
+
+Te mostrará las opciones de ataque; selecciona la opción 6 para el menú de descifrado WPA/WPA2 sin conexión.
+
+<img width="364" height="305" alt="Screenshot 2025-10-29 at 6 05 31 p m" src="https://github.com/user-attachments/assets/1cee8f30-2153-45ec-a127-4ce034d77933" />
+
+Ahora utilizaremos un diccionario para descifrar el archivo capturado durante el handshake. Seleccione la opción 1, como se muestra en la imagen.
+
+<img width="355" height="167" alt="Screenshot 2025-10-29 at 6 05 36 p m" src="https://github.com/user-attachments/assets/9db73db9-81a6-4919-99f1-673246adf781" />
+
+
+Por defecto, se utilizará el último archivo capturado para el ataque de fuerza bruta. Pulse Enter para seleccionar la ruta y
+el BSSID del último archivo capturado. A continuación, indique la ruta de su diccionario o rockyou.txt y
+pulse Intro para iniciar un ataque de diccionario contra el handshake WPA.
+
