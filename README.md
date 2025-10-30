@@ -146,4 +146,73 @@ A continuación, se mostrará la contraseña o clave Wi-Fi, como se ilustra en l
 <img width="477" height="381" alt="Screenshot 2025-10-29 at 6 10 51 p m" src="https://github.com/user-attachments/assets/85056b00-0453-454d-8beb-38633449f6b6" />
 
 
+## Ataque de fuerza bruta con Airacrack al handshake WPA
+
+Seleccione la opción 2 para realizar un ataque de fuerza bruta contra el archivo de handshake WPA, que decodificará los paquetes
+usando Crunch y Airacrack. Por defecto, se atacará el último archivo capturado. Pulse Y para seleccionar el
+directorio y el BSSID del último archivo capturado. A continuación, introduzca la ruta a su diccionario o archivo rockyou.txt y pulse
+la tecla Intro para iniciar el ataque de fuerza bruta al handshake WPA.
+
+<img width="573" height="387" alt="Screenshot 2025-10-29 at 6 21 04 p m" src="https://github.com/user-attachments/assets/7f8a856d-0a72-48ba-9720-4a19f0aa3bf5" />
+
+
+Seleccione el conjunto de caracteres; en este caso, la opción 6 para seleccionar caracteres en minúscula y numéricos que intentarán descifrar la clave Wi-Fi mediante fuerza bruta utilizando un conjunto de caracteres alfanuméricos. Para iniciar el ataque, pulse la tecla Enter/Intro.
+
+
+<img width="505" height="314" alt="Screenshot 2025-10-29 at 6 22 07 p m" src="https://github.com/user-attachments/assets/19a0325c-72b2-4d9e-8cc6-de926fa2ab5e" />
+
+Si el intento tiene éxito, se mostrará la contraseña o la clave Wi-Fi, como se ilustra en la figura siguiente.
+
+<img width="528" height="187" alt="Screenshot 2025-10-29 at 6 22 35 p m" src="https://github.com/user-attachments/assets/da95eb21-349c-4101-8c24-fdc69cc1c4dc" />
+
+
+## Ataque basado en reglas de Hashcat para el handshake WPA
+
+Dado que todos conocemos las capacidades de Hashcat, Airgeddon ofrece la oportunidad de utilizarlo para
+descifrar la clave Wi-Fi. Seleccione la opción 5 e introduzca la ruta a su archivo de handshake WPA, diccionario o archivo basado en reglas.
+
+Aquí proporcionamos la ruta al archivo best64.rule, que se utilizará para realizar un ataque basado en reglas de Hashcat.
+
+Ataque de descifrado de claves.
+
+<img width="504" height="404" alt="Screenshot 2025-10-29 at 6 23 29 p m" src="https://github.com/user-attachments/assets/4c4ccb24-63a3-47a7-80be-285b566c7839" />
+
+Pulsa ENTER para iniciar el ataque, que intentará descifrar la comunicación cifrada con WPA.
+
+<img width="439" height="608" alt="Screenshot 2025-10-29 at 6 24 00 p m" src="https://github.com/user-attachments/assets/c5f50186-4abf-4304-b864-4ef1f069f088" />
+
+Tras una prueba exitosa, se le pedirá que guarde el resultado. Para guardar la clave enumerada, utilice la tecla Intro.
+
+<img width="568" height="117" alt="Screenshot 2025-10-29 at 6 24 33 p m" src="https://github.com/user-attachments/assets/1678b057-dd69-46b6-98ab-c1b7ce668817" />
+
+Puedes acceder al archivo guardado para leer la contraseña de Wi-Fi descifrada.
+
+<img width="414" height="190" alt="Screenshot 2025-10-29 at 6 25 12 p m" src="https://github.com/user-attachments/assets/11bb2337-604f-42ab-860d-e784e01d647f" />
+
+
+## Ataque de gemelo malicioso
+
+Un gemelo malicioso es una falsificación de un punto de acceso Wi-Fi (AP falso) que se hace pasar por uno legítimo, pero que está configurado deliberadamente
+para interceptar el tráfico inalámbrico. Al crear un sitio web falso y atraer usuarios a él, este tipo de ataque
+puede utilizarse para obtener credenciales de clientes legítimos.
+
+Desde el menú principal, seleccione la opción 7 para Ataque de gemelo malicioso.
+
+<img width="444" height="304" alt="Screenshot 2025-10-29 at 6 25 51 p m" src="https://github.com/user-attachments/assets/fc3a74f9-0130-4d3d-9e07-21077ece9707" />
+
+Luego seleccione la opción 9, que buscará puntos de acceso cercanos.
+
+<img width="488" height="389" alt="Screenshot 2025-10-29 at 6 26 21 p m" src="https://github.com/user-attachments/assets/5f9bb9be-0ccc-41da-a57a-bafa4d4be70f" />
+
+Continúe pulsando la tecla ENTER y aparecerá una ventana para escanear puntos de acceso WPA/WPA2.
+
+<img width="506" height="222" alt="Screenshot 2025-10-29 at 6 27 40 p m" src="https://github.com/user-attachments/assets/4b3f30cf-719f-4959-b90f-d828efc8dee9" />
+
+
+Para finalizar el escaneo, pulse CTRL+C y se mostrará una lista de todos los puntos de acceso escaneados. Elija el punto de acceso que le interese.
+
+<img width="496" height="334" alt="Screenshot 2025-10-29 at 6 28 03 p m" src="https://github.com/user-attachments/assets/08f4dbc0-d107-409f-bdfa-8749925f7789" />
+
+Seleccione la opción 2 para un ataque de desautenticación que desconecte al cliente del punto de acceso seleccionado. Posteriormente, podría solicitarle que habilite el modo de persecución DoS, lo cual rechazamos.
+<img width="567" height="141" alt="Screenshot 2025-10-29 at 6 28 28 p m" src="https://github.com/user-attachments/assets/024d0772-e06d-41f5-9ee1-8a90fe6816d3" />
 
