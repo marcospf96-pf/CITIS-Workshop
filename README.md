@@ -216,3 +216,112 @@ Para finalizar el escaneo, pulse CTRL+C y se mostrará una lista de todos los pu
 Seleccione la opción 2 para un ataque de desautenticación que desconecte al cliente del punto de acceso seleccionado. Posteriormente, podría solicitarle que habilite el modo de persecución DoS, lo cual rechazamos.
 <img width="567" height="141" alt="Screenshot 2025-10-29 at 6 28 28 p m" src="https://github.com/user-attachments/assets/024d0772-e06d-41f5-9ee1-8a90fe6816d3" />
 
+
+Antes de iniciar la desautenticación e intentar capturar el handshake, se le harán algunas preguntas como:
+
+¿Desea suplantar su dirección MAC durante este ataque? [s/N]: s
+¿Ya tiene un archivo capturado? [s/N]: N
+Valor de tiempo en segundos: 20
+Pulse la tecla ENTER para aceptar la propuesta.
+
+<img width="528" height="230" alt="Screenshot 2025-10-29 at 6 30 21 p m" src="https://github.com/user-attachments/assets/87e749e5-c765-497c-a902-9d382d877c5e" />
+
+
+Volverán a aparecer las dos ventanas. Una intentará un ataque de desautenticación, mientras que la otra intentará capturar el protocolo de enlace WPA entre el cliente y el punto de acceso tras la desautenticación.
+
+<img width="523" height="261" alt="Screenshot 2025-10-29 at 6 30 41 p m" src="https://github.com/user-attachments/assets/8f106409-b3cb-4409-811c-c01651604c68" />
+
+Espere hasta que aparezca el protocolo de enlace WPA en la esquina superior derecha de la ventana y, a continuación, pulse CTRL^C.
+
+<img width="531" height="215" alt="Screenshot 2025-10-29 at 6 31 15 p m" src="https://github.com/user-attachments/assets/b82c12c7-f99e-4f63-b711-bbd7e1d9d327" />
+
+
+
+Como puede ver, ya tenemos el protocolo de enlace WPA para el punto de acceso «raaj». Acepte la propuesta guardando el archivo .cap
+en su sistema y pulsando la tecla Intro. A continuación, si utiliza un portal cautivo, se le pedirá que
+especifique la ruta del archivo que contendrá la contraseña de la red Wi-Fi.
+
+Si la contraseña de la red Wi-Fi se obtiene mediante el portal cautivo, deberá decidir dónde guardarla: en /root/rajpwd.txt
+
+<img width="576" height="210" alt="Screenshot 2025-10-29 at 6 33 24 p m" src="https://github.com/user-attachments/assets/524ace24-f750-4240-b9a4-94e5ee62d0b9" />
+
+
+Crea un portal cautivo para realizar phishing a tu cliente y selecciona el idioma en el que se mostrará el portal web.
+
+Para inglés, elegimos la opción 1. Se abrirán seis ventanas al enviar la opción seleccionada.
+
+<img width="499" height="261" alt="Screenshot 2025-10-29 at 6 33 55 p m" src="https://github.com/user-attachments/assets/c7a3fde7-089d-425f-9397-3ea59e509a26" />
+
+
+AP: Crea un punto de acceso falso llamado "raaj" para el cliente.
+DHCP: Inicia un servicio DHCP falso para proporcionar una IP maliciosa al cliente.
+DNS: Inicia una consulta DNS maliciosa.
+Desautenticación: Desautentica al cliente del punto de acceso original "raaj".
+Servidor web: Inicia un servicio para alojar el portal cautivo.
+Control: Intenta interceptar la contraseña de Wi-Fi una vez que el cliente se conecte al punto de acceso falso.
+Nota: No cierres las ventanas; desaparecerán después de que se haya capturado la contraseña.
+
+<img width="512" height="326" alt="Screenshot 2025-10-29 at 6 34 31 p m" src="https://github.com/user-attachments/assets/167deab9-81be-442d-b745-c66c60b4e3d8" />
+
+
+Todos los clientes que se conecten al punto de acceso original “raaj” se desconectarán y, al intentar reconectarse,
+
+descubrirán dos puntos de acceso con el mismo nombre. Cuando el cliente se conecta al punto de acceso falso, es redirigido al
+portal cautivo.
+
+<img width="329" height="599" alt="Screenshot 2025-10-29 at 6 35 05 p m" src="https://github.com/user-attachments/assets/9b278bcd-6fd8-4098-985d-a87009bae425" />
+
+El portal web cautivo le pedirá que introduzca la contraseña de la red Wi-Fi para obtener acceso a internet.
+
+<img width="327" height="555" alt="Screenshot 2025-10-29 at 6 35 34 p m" src="https://github.com/user-attachments/assets/ea307dbe-9fab-439c-b71d-fb6cac0b98ae" />
+
+Si el cliente proporciona la clave Wi-Fi, la contraseña se capturará en texto plano en la ventana de control.
+
+<img width="529" height="184" alt="Screenshot 2025-10-29 at 6 36 01 p m" src="https://github.com/user-attachments/assets/d7ca7ebf-fa95-4d82-81d8-584baba09eae" />
+
+Además, guarda la contraseña en el archivo que proporcionaste durante la propuesta.
+
+<img width="499" height="213" alt="Screenshot 2025-10-29 at 6 36 28 p m" src="https://github.com/user-attachments/assets/1bc42d41-13df-4aae-8086-c271f1a181d0" />
+
+## PMKID ataque
+
+PMKID es el identificador único que utiliza el punto de acceso (AP) para registrar la PMK del cliente.
+
+PMKID se compone de la dirección MAC del AP, la dirección MAC del cliente, la PMK y el nombre de la PMK. Para obtener más información, consulte aquí.
+Para capturar el PMKID, ejecute el script de Airgeddon y seleccione la opción 5, como se muestra a continuación.
+
+<img width="382" height="320" alt="Screenshot 2025-10-29 at 6 37 05 p m" src="https://github.com/user-attachments/assets/cb274969-0429-46fa-bacc-d7810ca0380c" />
+
+
+Luego, presione nuevamente 5 y espere a que el script capture los SSID cercanos.
+
+<img width="488" height="347" alt="Screenshot 2025-10-29 at 6 37 26 p m" src="https://github.com/user-attachments/assets/73080598-5e52-4050-8954-adbd2d24263d" />
+
+
+Ahora verá una lista de objetivos. Nuestro objetivo para el número 6 es “Amit 2.4 G”. A continuación, simplemente INTRODUZCA el tiempo de espera en
+segundos que desea que el script espere antes de capturar el PMKID. Supongamos que 25 segundos es
+tiempo suficiente.
+
+<img width="504" height="369" alt="Screenshot 2025-10-29 at 6 37 51 p m" src="https://github.com/user-attachments/assets/577e3fa8-66d2-41de-9a8d-1ff775a4a992" />
+
+
+¡Efectivamente, aquí podemos ver cómo se captura un PMKID!
+
+<img width="536" height="357" alt="Screenshot 2025-10-29 at 6 38 16 p m" src="https://github.com/user-attachments/assets/ad94b7c5-7aa8-4505-88dd-ed0f8dc8de9b" />
+
+
+Luego, simplemente guarda este PMKID como un archivo .cap. Primero presiona Y, luego ENTER, ingresa la ruta y listo.
+
+<img width="566" height="180" alt="Screenshot 2025-10-29 at 6 38 48 p m" src="https://github.com/user-attachments/assets/53158967-8a09-41b3-8aa1-88696f158b6f" />
+
+Now, with an integrated aircrack-ng we can crack the cap file within the airgeddon script itself like this:
+Just choose dictionary attack and yes and then the dictionary file.
+
+Ahora, con aircrack-ng integrado, podemos descifrar el archivo cap dentro del propio script de airgeddon de esta manera: Simplemente selecciona "Ataque de diccionario" y luego "Sí", y finalmente el archivo de diccionario.
+
+<img width="524" height="320" alt="Screenshot 2025-10-29 at 6 39 19 p m" src="https://github.com/user-attachments/assets/6f600f7f-9a1f-4185-bf79-6493bd2a49c9" />
+
+Efectivamente, tenemos la contraseña que necesitábamos.
+
+<img width="529" height="286" alt="Screenshot 2025-10-29 at 6 39 44 p m" src="https://github.com/user-attachments/assets/ae452a90-ca4b-4b8e-a126-d4d9ae79689b" />
+
