@@ -138,3 +138,12 @@ Por defecto, se utilizará el último archivo capturado para el ataque de fuerza
 el BSSID del último archivo capturado. A continuación, indique la ruta de su diccionario o rockyou.txt y
 pulse Intro para iniciar un ataque de diccionario contra el handshake WPA.
 
+
+<img width="503" height="340" alt="Screenshot 2025-10-29 at 6 10 11 p m" src="https://github.com/user-attachments/assets/06eeaf7e-deff-4b71-8b11-d952eed2b054" />
+
+A continuación, se mostrará la contraseña o clave Wi-Fi, como se ilustra en la figura siguiente. Si desea guardar la clave, se le pedirá que lo haga.
+
+<img width="477" height="381" alt="Screenshot 2025-10-29 at 6 10 51 p m" src="https://github.com/user-attachments/assets/85056b00-0453-454d-8beb-38633449f6b6" />
+
+
+
